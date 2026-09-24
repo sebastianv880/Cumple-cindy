@@ -1,610 +1,1061 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Feliz Cumpleaños Cindy ❤️</title>
+<title>Feliz Cumpleaños Cindy ❤️</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #120b22;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* =====================================================
+   PORTADA
+===================================================== */
+
+.portada {
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(25, 10, 50, .35),
+            rgba(255, 105, 160, .20),
+            rgba(10, 7, 25, .75)
+        ),
+        linear-gradient(
+            to bottom,
+            #17103b 0%,
+            #6d315f 42%,
+            #e8909f 70%,
+            #24132e 100%
+        );
+}
+
+/* Luna */
+
+.luna {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: #fff5d6;
+    border-radius: 50%;
+    top: 8%;
+    right: 12%;
+    box-shadow:
+        0 0 25px #fff5d6,
+        0 0 70px rgba(255,245,214,.5);
+}
+
+/* Estrellas */
+
+.estrella {
+    position: absolute;
+    color: white;
+    font-size: 18px;
+    animation: brillo 2s infinite alternate;
+}
+
+.e1 { top: 10%; left: 12%; }
+.e2 { top: 18%; left: 35%; }
+.e3 { top: 12%; left: 60%; }
+.e4 { top: 27%; left: 80%; }
+.e5 { top: 33%; left: 10%; }
+.e6 { top: 38%; left: 88%; }
+.e7 { top: 22%; left: 50%; }
+.e8 { top: 45%; left: 30%; }
+
+@keyframes brillo {
+    from {
+        opacity: .25;
+        transform: scale(.7);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1.25);
+    }
+}
+
+/* =====================================================
+   TORRE EIFFEL
+===================================================== */
+
+.torre {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(430px, 65vw);
+    height: 62vh;
+    z-index: 1;
+}
+
+/* Parte principal */
+
+.torre-base {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 12%;
+    height: 85%;
+
+    background:
+        linear-gradient(
+            90deg,
+            #17151c,
+            #5e5960,
+            #17151c
+        );
+
+    clip-path: polygon(
+        48% 0,
+        52% 0,
+        65% 35%,
+        100% 100%,
+        75% 100%,
+        52% 43%,
+        48% 43%,
+        25% 100%,
+        0 100%,
+        35% 35%
+    );
+}
+
+/* Arcos de la torre */
+
+.torre::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 90%;
+    height: 45%;
+
+    border-left: 12px solid #27242b;
+    border-right: 12px solid #27242b;
+
+    border-radius: 50% 50% 0 0;
+
+    box-shadow:
+        inset 0 0 0 4px rgba(255,255,255,.12);
+}
+
+/* Plataformas */
+
+.nivel {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 8px;
+    background: #29262d;
+    border-radius: 5px;
+    z-index: 3;
+}
+
+.nivel1 {
+    width: 62%;
+    bottom: 33%;
+}
+
+.nivel2 {
+    width: 43%;
+    bottom: 52%;
+}
+
+.nivel3 {
+    width: 25%;
+    bottom: 69%;
+}
+
+.punta {
+    position: absolute;
+    bottom: 69%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 25%;
+    background: #29262d;
+}
+
+/* Luces de París */
+
+.luces {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 28%;
+    z-index: 2;
+
+    background:
+        radial-gradient(circle at 10% 70%, #ffd86b 0 2px, transparent 3px),
+        radial-gradient(circle at 20% 60%, #fff0a5 0 2px, transparent 3px),
+        radial-gradient(circle at 31% 75%, #ffd86b 0 2px, transparent 3px),
+        radial-gradient(circle at 43% 55%, #fff0a5 0 2px, transparent 3px),
+        radial-gradient(circle at 57% 70%, #ffd86b 0 2px, transparent 3px),
+        radial-gradient(circle at 69% 60%, #fff0a5 0 2px, transparent 3px),
+        radial-gradient(circle at 82% 75%, #ffd86b 0 2px, transparent 3px),
+        radial-gradient(circle at 94% 55%, #fff0a5 0 2px, transparent 3px);
+}
+
+/* =====================================================
+   TEXTO
+===================================================== */
+
+.contenido {
+    position: relative;
+    z-index: 10;
+    padding: 45px 20px 0;
+    max-width: 1000px;
+}
+
+.titulo {
+    font-size: clamp(30px, 6vw, 65px);
+    color: #fff;
+    text-shadow:
+        0 0 10px rgba(255,255,255,.5),
+        3px 3px 10px rgba(0,0,0,.5);
+
+    animation: aparecer 2s ease;
+}
+
+.subtitulo {
+    margin-top: 15px;
+    font-size: clamp(18px, 3vw, 28px);
+    color: #ffe0ed;
+    line-height: 1.5;
+    animation: aparecer 3s ease;
+}
+
+.nombre-principal {
+    color: #ffb4d2;
+    font-weight: bold;
+}
+
+/* =====================================================
+   GLOBO AEROSTÁTICO REALISTA
+===================================================== */
+
+.globo {
+    position: absolute;
+    z-index: 8;
+
+    width: 300px;
+    height: 470px;
+
+    left: 50%;
+    top: 34%;
+
+    transform: translateX(-50%);
+
+    animation: flotar 5s ease-in-out infinite;
+}
+
+/* Globo */
+
+.globo-cuerpo {
+    position: absolute;
+
+    width: 270px;
+    height: 320px;
+
+    left: 15px;
+    top: 0;
+
+    border-radius:
+        50% 50%
+        48% 48%
+        44% 44%;
+
+    background:
+        radial-gradient(
+            ellipse at 35% 25%,
+            #fff0f7 0%,
+            #ffb5d2 13%,
+            #ef5d91 36%,
+            #c71961 68%,
+            #770d3d 100%
+        );
+
+    border: 5px solid #70103b;
+
+    box-shadow:
+        inset -30px -25px 40px rgba(50,0,25,.35),
+        inset 20px 10px 35px rgba(255,255,255,.3),
+        0 20px 35px rgba(0,0,0,.35);
+
+    overflow: hidden;
+
+    transition: 1.5s ease;
+}
+
+/* Paneles del globo */
+
+.globo-cuerpo::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent 0 16%,
+            rgba(105,0,45,.45) 17% 19%,
+            transparent 20% 31%,
+            rgba(105,0,45,.45) 32% 34%,
+            transparent 35% 48%,
+            rgba(105,0,45,.45) 49% 51%,
+            transparent 52% 65%,
+            rgba(105,0,45,.45) 66% 68%,
+            transparent 69% 81%,
+            rgba(105,0,45,.45) 82% 84%,
+            transparent 85%
+        );
+}
+
+/* Brillo */
+
+.globo-cuerpo::after {
+    content: "";
+
+    position: absolute;
+
+    width: 75px;
+    height: 150px;
+
+    left: 55px;
+    top: 35px;
+
+    background: rgba(255,255,255,.20);
+
+    border-radius: 50%;
+
+    filter: blur(10px);
+}
+
+/* Nombre */
+
+.nombre-globo {
+    position: absolute;
+    z-index: 5;
+
+    top: 125px;
+    left: 0;
+
+    width: 100%;
+
+    color: white;
+
+    font-size: 38px;
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    text-shadow:
+        2px 3px 5px #610c35,
+        0 0 10px rgba(255,255,255,.4);
+}
+
+/* Cuerdas */
+
+.cuerda {
+    position: absolute;
+
+    width: 4px;
+    height: 100px;
+
+    top: 285px;
+
+    background:
+        repeating-linear-gradient(
+            45deg,
+            #6c4937 0 4px,
+            #b1845f 4px 7px
+        );
+
+    z-index: 3;
+}
+
+.cuerda1 {
+    left: 65px;
+    transform: rotate(7deg);
+}
+
+.cuerda2 {
+    right: 65px;
+    transform: rotate(-7deg);
+}
+
+/* Canasta */
+
+.canasta {
+    position: absolute;
+
+    width: 100px;
+    height: 70px;
+
+    left: 100px;
+    top: 350px;
+
+    background:
+        repeating-linear-gradient(
+            0deg,
+            #9a633f 0 7px,
+            #c18a5c 7px 11px
+        );
+
+    border: 5px solid #613a27;
+
+    border-radius:
+        5px 5px 18px 18px;
+
+    box-shadow:
+        0 8px 15px rgba(0,0,0,.4);
+
+    z-index: 4;
+}
+
+.canasta::after {
+    content: "❤️";
+
+    position: absolute;
+
+    left: 31px;
+    top: 16px;
+
+    font-size: 28px;
+}
+
+/* Movimiento */
+
+@keyframes flotar {
+
+    0%, 100% {
+        transform: translate(-50%, 0);
+    }
+
+    50% {
+        transform: translate(-50%, -22px);
+    }
+}
+
+/* =====================================================
+   BOTÓN
+===================================================== */
+
+.boton {
+    position: relative;
+    z-index: 20;
+
+    margin-top: 20px;
+
+    padding: 15px 30px;
+
+    border: none;
+    border-radius: 50px;
+
+    background:
+        linear-gradient(135deg, #e91e63, #ad1457);
+
+    color: white;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.3);
+
+    transition: .3s;
+}
+
+.boton:hover {
+    transform: scale(1.08);
+}
+
+/* =====================================================
+   GLOBO ABIERTO
+===================================================== */
+
+.globo.abierto {
+    animation: globoSube 2s ease forwards;
+}
+
+.globo.abierto .globo-cuerpo {
+    animation: explotarGlobo 1.8s ease forwards;
+}
+
+.globo.abierto .cuerda,
+.globo.abierto .canasta {
+    animation: caerCanasta 1.5s ease forwards;
+}
+
+@keyframes explotarGlobo {
+
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    40% {
+        transform: scale(1.15);
+    }
+
+    100% {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+
+@keyframes caerCanasta {
+
+    to {
+        transform: translateY(180px) rotate(20deg);
+        opacity: 0;
+    }
+}
+
+@keyframes globoSube {
+
+    to {
+        transform: translate(-50%, -200px);
+        opacity: 0;
+    }
+}
+
+/* =====================================================
+   SORPRESA
+===================================================== */
+
+.sorpresa {
+    display: none;
+
+    position: relative;
+    z-index: 30;
+
+    margin: 30px auto;
+
+    max-width: 750px;
+
+    padding: 25px;
+
+    border-radius: 25px;
+
+    background: rgba(255,255,255,.15);
+
+    backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(255,255,255,.3);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.25);
+
+    animation: aparecerSorpresa 1.5s ease;
+}
+
+.sorpresa h2 {
+    color: #ffb6d2;
+
+    font-size: clamp(25px, 5vw, 40px);
+
+    margin-bottom: 15px;
+}
+
+.sorpresa p {
+    font-size: clamp(17px, 3vw, 23px);
+
+    line-height: 1.6;
+}
+
+@keyframes aparecerSorpresa {
+
+    from {
+        opacity: 0;
+        transform: translateY(50px) scale(.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* =====================================================
+   SECCIÓN FOTOS
+===================================================== */
+
+.fotos-seccion {
+
+    position: relative;
+
+    min-height: 100vh;
+
+    padding: 70px 20px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #210e29,
+            #701744,
+            #1b1028
+        );
+}
+
+.fotos-titulo {
+
+    font-size: clamp(28px, 5vw, 50px);
+
+    color: #ffc1d9;
+
+    margin-bottom: 10px;
+}
+
+.fotos-subtitulo {
+
+    color: #f4dce7;
+
+    font-size: clamp(16px, 2.5vw, 20px);
+
+    margin-bottom: 40px;
+}
+
+/* Galería */
+
+.galeria {
+
+    width: min(1100px, 100%);
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 22px;
+}
+
+/* Tarjetas */
+
+.foto-card {
+
+    position: relative;
+
+    aspect-ratio: 3 / 4;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    background: rgba(255,255,255,.1);
+
+    border: 3px solid rgba(255,255,255,.3);
+
+    box-shadow:
+        0 12px 30px rgba(0,0,0,.4);
+
+    transition: .4s;
+}
+
+.foto-card:hover {
+
+    transform:
+        translateY(-10px)
+        rotate(1deg);
+
+    box-shadow:
+        0 20px 40px rgba(0,0,0,.5);
+}
+
+.foto-card img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: .5s;
+}
+
+.foto-card:hover img {
+
+    transform: scale(1.08);
+}
+
+/* Número */
+
+.numero {
+
+    position: absolute;
+
+    top: 10px;
+    left: 10px;
+
+    width: 35px;
+    height: 35px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    background: rgba(0,0,0,.6);
+
+    color: white;
+
+    font-weight: bold;
+
+    z-index: 5;
+}
+
+/* =====================================================
+   PIE
+===================================================== */
+
+.pie {
+
+    padding: 35px 20px;
+
+    text-align: center;
+
+    background: #0c0713;
+
+    color: #eabbd0;
+
+    font-size: 16px;
+}
+
+/* =====================================================
+   RESPONSIVE CELULAR
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .contenido {
+        padding-top: 25px;
+    }
+
+    .luna {
+        width: 65px;
+        height: 65px;
+        right: 8%;
+    }
+
+    .torre {
+        width: 85vw;
+        height: 48vh;
+    }
+
+    .globo {
+        transform:
+            translateX(-50%)
+            scale(.68);
+
+        top: 38%;
+    }
+
+    @keyframes flotar {
+
+        0%, 100% {
+            transform:
+                translate(-50%, 0)
+                scale(.68);
         }
 
-        html, body {
-            width: 100%;
-            min-height: 100%;
+        50% {
+            transform:
+                translate(-50%, -15px)
+                scale(.68);
+        }
+    }
+
+    .galeria {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 14px;
+    }
+
+    .fotos-seccion {
+        padding: 55px 15px;
+    }
+}
+
+/* Celulares pequeños */
+
+@media (max-width: 400px) {
+
+    .globo {
+        transform:
+            translateX(-50%)
+            scale(.58);
+    }
+
+    @keyframes flotar {
+
+        0%, 100% {
+            transform:
+                translate(-50%, 0)
+                scale(.58);
         }
 
-        body {
-            min-height: 100vh;
-            overflow-x: hidden;
-            font-family: 'Segoe UI', Arial, sans-serif;
-            background:
-                linear-gradient(to bottom, #ff9ecf, #ffd6e8, #fff1f7);
-            text-align: center;
+        50% {
+            transform:
+                translate(-50%, -12px)
+                scale(.58);
         }
-
-        .contenedor {
-            position: relative;
-            width: 100%;
-            min-height: 100vh;
-            overflow: hidden;
-            padding: 25px 15px 30px;
-        }
-
-        /* =========================
-           ESTRELLAS
-        ========================= */
-
-        .estrella {
-            position: absolute;
-            color: white;
-            font-size: 22px;
-            animation: brillar 2s infinite alternate;
-            pointer-events: none;
-        }
-
-        @keyframes brillar {
-            from {
-                opacity: 0.3;
-                transform: scale(0.8);
-            }
-
-            to {
-                opacity: 1;
-                transform: scale(1.3);
-            }
-        }
-
-        /* =========================
-           TITULO
-        ========================= */
-
-        .titulo {
-            position: relative;
-            z-index: 10;
-            margin: 10px auto 0;
-            color: #c2185b;
-            font-size: clamp(28px, 5vw, 52px);
-            line-height: 1.15;
-            max-width: 900px;
-            text-shadow: 2px 2px 5px rgba(255,255,255,0.8);
-            animation: aparecer 2s ease;
-        }
-
-        .mensaje {
-            position: relative;
-            z-index: 10;
-            margin: 15px auto 0;
-            color: #8e1749;
-            font-size: clamp(17px, 2.5vw, 25px);
-            line-height: 1.5;
-            font-weight: 500;
-            max-width: 800px;
-            animation: aparecer 3s ease;
-        }
-
-        /* =========================
-           GLOBO
-        ========================= */
-
-        .globo {
-            position: relative;
-            width: min(230px, 58vw);
-            height: 350px;
-            margin: 25px auto 0;
-            z-index: 5;
-            animation: flotar 4s ease-in-out infinite;
-        }
-
-        .globo-cuerpo {
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: min(210px, 55vw);
-            height: min(250px, 60vw);
-            border-radius: 50% 50% 45% 45%;
-
-            background:
-                linear-gradient(
-                    90deg,
-                    #e91e63 0%,
-                    #ff80ab 30%,
-                    #f8bbd0 50%,
-                    #ff80ab 70%,
-                    #e91e63 100%
-                );
-
-            border: 5px solid #ad1457;
-
-            box-shadow:
-                0 10px 30px rgba(173,20,87,0.35);
-
-            transition:
-                transform 1s ease,
-                opacity 1s ease;
-        }
-
-        .globo-cuerpo::before {
-            content: "";
-            position: absolute;
-            width: 5px;
-            height: 88%;
-            background: rgba(173,20,87,0.4);
-            left: 50%;
-            top: 6%;
-        }
-
-        .nombre {
-            position: absolute;
-            top: 38%;
-            left: 0;
-            width: 100%;
-            color: white;
-            font-size: clamp(25px, 6vw, 32px);
-            font-weight: bold;
-            text-shadow: 2px 2px 4px #ad1457;
-            z-index: 3;
-        }
-
-        /* =========================
-           CUERDAS
-        ========================= */
-
-        .cuerda {
-            position: absolute;
-            width: 3px;
-            height: 55px;
-            background: #795548;
-            top: 225px;
-            transition: opacity 0.5s ease;
-        }
-
-        .cuerda.izquierda {
-            left: 48px;
-            transform: rotate(8deg);
-        }
-
-        .cuerda.derecha {
-            right: 48px;
-            transform: rotate(-8deg);
-        }
-
-        /* =========================
-           CANASTA
-        ========================= */
-
-        .canasta {
-            position: absolute;
-            width: 85px;
-            height: 55px;
-            background: linear-gradient(#a1887f, #795548);
-            border: 4px solid #5d4037;
-            left: 50%;
-            transform: translateX(-50%);
-            top: 275px;
-            border-radius: 5px 5px 15px 15px;
-            transition:
-                transform 1s ease,
-                opacity 1s ease;
-        }
-
-        .canasta::after {
-            content: "❤️";
-            font-size: 25px;
-            position: absolute;
-            left: 27px;
-            top: 12px;
-        }
-
-        /* =========================
-           ANIMACIÓN DEL GLOBO
-        ========================= */
-
-        @keyframes flotar {
-            0%, 100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-15px);
-            }
-        }
-
-        /* Cuando se abre */
-        .globo.abierto .globo-cuerpo {
-            animation: abrirGlobo 1.5s ease forwards;
-        }
-
-        .globo.abierto .cuerda,
-        .globo.abierto .canasta {
-            opacity: 0;
-        }
-
-        @keyframes abrirGlobo {
-            0% {
-                transform: translateX(-50%) scale(1);
-                opacity: 1;
-            }
-
-            40% {
-                transform: translateX(-50%) scale(1.15);
-            }
-
-            100% {
-                transform: translateX(-50%) scale(0);
-                opacity: 0;
-            }
-        }
-
-        /* =========================
-           NUBES
-        ========================= */
-
-        .nube {
-            position: absolute;
-            background: white;
-            border-radius: 50px;
-            width: 150px;
-            height: 45px;
-            opacity: 0.65;
-            animation: mover 25s linear infinite;
-            pointer-events: none;
-        }
-
-        .nube::before,
-        .nube::after {
-            content: "";
-            position: absolute;
-            background: white;
-            border-radius: 50%;
-        }
-
-        .nube::before {
-            width: 70px;
-            height: 70px;
-            top: -35px;
-            left: 25px;
-        }
-
-        .nube::after {
-            width: 55px;
-            height: 55px;
-            top: -25px;
-            right: 20px;
-        }
-
-        .nube1 {
-            top: 25%;
-            left: -180px;
-        }
-
-        .nube2 {
-            top: 65%;
-            left: -200px;
-            animation-duration: 32s;
-            animation-delay: 8s;
-        }
-
-        @keyframes mover {
-            from {
-                transform: translateX(0);
-            }
-
-            to {
-                transform: translateX(130vw);
-            }
-        }
-
-        /* =========================
-           BOTÓN
-        ========================= */
-
-        button {
-            position: relative;
-            z-index: 20;
-
-            margin-top: -5px;
-
-            padding: 13px 25px;
-
-            border: none;
-            border-radius: 30px;
-
-            background: #e91e63;
-            color: white;
-
-            font-size: clamp(16px, 3vw, 19px);
-            font-weight: bold;
-
-            cursor: pointer;
-
-            box-shadow:
-                0 5px 15px rgba(0,0,0,0.2);
-
-            transition:
-                transform 0.3s ease,
-                background 0.3s ease;
-        }
-
-        button:hover {
-            background: #c2185b;
-            transform: scale(1.05);
-        }
-
-        button:active {
-            transform: scale(0.95);
-        }
-
-        /* =========================
-           MENSAJE SORPRESA
-        ========================= */
-
-        #sorpresa {
-            display: none;
-
-            position: relative;
-            z-index: 30;
-
-            max-width: 800px;
-
-            margin: 25px auto 0;
-
-            padding: 20px;
-
-            color: #c2185b;
-
-            font-size: clamp(18px, 3vw, 25px);
-
-            line-height: 1.5;
-
-            font-weight: bold;
-
-            background: rgba(255,255,255,0.65);
-
-            border-radius: 25px;
-
-            box-shadow:
-                0 8px 25px rgba(194,24,91,0.18);
-
-            animation: mensajeSorpresa 1.5s ease forwards;
-        }
-
-        @keyframes mensajeSorpresa {
-            from {
-                opacity: 0;
-                transform: translateY(30px) scale(0.8);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-            }
-        }
-
-        /* =========================
-           CORAZONES
-        ========================= */
-
-        .corazones {
-            margin-top: 10px;
-            font-size: 28px;
-            animation: latido 1s infinite;
-        }
-
-        @keyframes latido {
-            0%, 100% {
-                transform: scale(1);
-            }
-
-            50% {
-                transform: scale(1.2);
-            }
-        }
-
-        /* =========================
-           TEXTO INFERIOR
-        ========================= */
-
-        .abajo {
-            position: relative;
-            z-index: 10;
-
-            margin-top: 20px;
-
-            color: #ad1457;
-
-            font-size: clamp(14px, 2vw, 18px);
-
-            font-weight: bold;
-        }
-
-        /* =========================
-           ANIMACIÓN DE APARICIÓN
-        ========================= */
-
-        @keyframes aparecer {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* =========================
-           CELULARES
-        ========================= */
-
-        @media (max-width: 600px) {
-
-            .contenedor {
-                padding-top: 18px;
-            }
-
-            .titulo {
-                margin-top: 5px;
-            }
-
-            .mensaje {
-                margin-top: 10px;
-            }
-
-            .globo {
-                margin-top: 15px;
-                transform: scale(0.82);
-                transform-origin: top center;
-                margin-bottom: -55px;
-            }
-
-            button {
-                margin-top: 5px;
-                padding: 12px 20px;
-            }
-
-            #sorpresa {
-                margin-top: 20px;
-                padding: 16px;
-            }
-
-            .abajo {
-                margin-top: 18px;
-            }
-        }
-
-        /* =========================
-           CELULARES PEQUEÑOS
-        ========================= */
-
-        @media (max-width: 380px) {
-
-            .titulo {
-                font-size: 27px;
-            }
-
-            .mensaje {
-                font-size: 16px;
-            }
-
-            .globo {
-                transform: scale(0.70);
-                margin-bottom: -100px;
-            }
-
-            button {
-                font-size: 15px;
-            }
-        }
-    </style>
+    }
+
+    .galeria {
+        grid-template-columns: 1fr;
+    }
+
+    .foto-card {
+        aspect-ratio: 4 / 5;
+    }
+}
+</style>
 </head>
 
 <body>
 
-<div class="contenedor">
+<!-- =====================================================
+     PORTADA
+===================================================== -->
 
-    <!-- ESTRELLAS -->
+<section class="portada">
 
-    <div class="estrella" style="top:10%; left:10%;">✨</div>
-    <div class="estrella" style="top:15%; left:80%;">✨</div>
-    <div class="estrella" style="top:40%; left:15%;">💖</div>
-    <div class="estrella" style="top:35%; left:90%;">✨</div>
-    <div class="estrella" style="top:75%; left:8%;">💕</div>
-    <div class="estrella" style="top:80%; left:88%;">✨</div>
+    <div class="luna"></div>
 
-    <!-- NUBES -->
+    <div class="estrella e1">✨</div>
+    <div class="estrella e2">⭐</div>
+    <div class="estrella e3">✨</div>
+    <div class="estrella e4">⭐</div>
+    <div class="estrella e5">✨</div>
+    <div class="estrella e6">⭐</div>
+    <div class="estrella e7">✨</div>
+    <div class="estrella e8">💖</div>
 
-    <div class="nube nube1"></div>
-    <div class="nube nube2"></div>
+    <!-- Torre Eiffel -->
 
-    <!-- TITULO -->
+    <div class="torre">
 
-    <h1 class="titulo">
-        🎂 ¡Feliz Cumpleaños, Amor! 🎂
-    </h1>
+        <div class="torre-base"></div>
 
-    <p class="mensaje">
-        Cindy, que cumplas muchos más ❤️<br>
-        Que todos tus sueños se hagan realidad.
-    </p>
+        <div class="nivel nivel1"></div>
+        <div class="nivel nivel2"></div>
+        <div class="nivel nivel3"></div>
 
-    <!-- GLOBO -->
+        <div class="punta"></div>
+
+    </div>
+
+    <div class="luces"></div>
+
+    <!-- Texto -->
+
+    <div class="contenido">
+
+        <h1 class="titulo">
+            🎂 ¡Feliz Cumpleaños, <span class="nombre-principal">Cindy</span>! 🎂
+        </h1>
+
+        <p class="subtitulo">
+            Mi amor, deseo que cumplas muchos más ❤️<br>
+            Que todos tus sueños se hagan realidad.
+        </p>
+
+    </div>
+
+    <!-- Globo -->
 
     <div class="globo" id="globo">
 
         <div class="globo-cuerpo">
-            <div class="nombre">
+
+            <div class="nombre-globo">
                 CINDY ❤️
             </div>
+
         </div>
 
-        <div class="cuerda izquierda"></div>
-        <div class="cuerda derecha"></div>
+        <div class="cuerda cuerda1"></div>
+        <div class="cuerda cuerda2"></div>
 
         <div class="canasta"></div>
 
     </div>
 
-    <!-- BOTÓN -->
+    <!-- Botón -->
 
-    <button onclick="mostrarSorpresa()">
-        💌 Una sorpresa para ti
+    <button class="boton" onclick="abrirSorpresa()">
+        💌 Tengo una sorpresa para ti
     </button>
 
-    <!-- MENSAJE -->
+    <!-- Sorpresa -->
 
-    <div id="sorpresa">
+    <div class="sorpresa" id="sorpresa">
 
-        💕 Te deseo un cumpleaños hermoso, Cindy. 💕
+        <h2>
+            💕 Para ti, Cindy 💕
+        </h2>
 
-        <br><br>
+        <p>
+            Hoy quiero recordarte lo especial que eres para mí.
+            Espero que este nuevo año de tu vida esté lleno de
+            momentos hermosos, sonrisas y sueños cumplidos.
+            <br><br>
+            Gracias por existir y por hacer mi vida mucho más bonita.
+            <br><br>
+            ❤️ Te quiero muchísimo ❤️
+        </p>
 
-        Gracias por existir y hacer mi vida más bonita. ❤️
+    </div>
 
-        <div class="corazones">
-            💖 💕 💗 💕 💖
+</section>
+
+
+<!-- =====================================================
+     SECCIÓN DE LAS 4 FOTOS
+===================================================== -->
+
+<section class="fotos-seccion">
+
+    <h2 class="fotos-titulo">
+        📸 Nuestros momentos ❤️
+    </h2>
+
+    <p class="fotos-subtitulo">
+        Cuatro recuerdos especiales para una persona especial.
+    </p>
+
+    <div class="galeria">
+
+        <!-- FOTO 1 -->
+
+        <div class="foto-card">
+
+            <span class="numero">1</span>
+
+            <img
+                src="fotos/foto1.jpg"
+                alt="Recuerdo 1 de Cindy"
+            >
+
+        </div>
+
+        <!-- FOTO 2 -->
+
+        <div class="foto-card">
+
+            <span class="numero">2</span>
+
+            <img
+                src="fotos/foto2.jpg"
+                alt="Recuerdo 2 de Cindy"
+            >
+
+        </div>
+
+        <!-- FOTO 3 -->
+
+        <div class="foto-card">
+
+            <span class="numero">3</span>
+
+            <img
+                src="fotos/foto3.jpg"
+                alt="Recuerdo 3 de Cindy"
+            >
+
+        </div>
+
+        <!-- FOTO 4 -->
+
+        <div class="foto-card">
+
+            <span class="numero">4</span>
+
+            <img
+                src="fotos/foto4.jpg"
+                alt="Recuerdo 4 de Cindy"
+            >
+
         </div>
 
     </div>
 
-    <div class="abajo">
-        Hecho con mucho amor para Cindy ❤️
-    </div>
+</section>
 
-</div>
+
+<!-- =====================================================
+     PIE
+===================================================== -->
+
+<footer class="pie">
+
+    Hecho especialmente para Cindy ❤️🎈
+
+</footer>
+
 
 <script>
 
-    function mostrarSorpresa() {
+function abrirSorpresa() {
 
-        const globo = document.getElementById("globo");
-        const sorpresa = document.getElementById("sorpresa");
-        const boton = document.querySelector("button");
+    const globo = document.getElementById("globo");
+    const sorpresa = document.getElementById("sorpresa");
 
-        // Abrir el globo
-        globo.classList.add("abierto");
+    // Activar animación del globo
+    globo.classList.add("abierto");
 
-        // Mostrar mensaje después de que empieza a abrirse
-        setTimeout(function() {
+    // Mostrar mensaje
+    setTimeout(function() {
 
-            sorpresa.style.display = "block";
+        sorpresa.style.display = "block";
 
-            boton.style.display = "none";
+        sorpresa.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+        });
 
-            // Desplazar suavemente hacia el mensaje
-            sorpresa.scrollIntoView({
-                behavior: "smooth",
-                block: "center"
-            });
+    }, 1200);
 
-        }, 900);
-    }
+}
 
 </script>
 
