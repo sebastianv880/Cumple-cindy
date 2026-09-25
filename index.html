@@ -1,0 +1,1468 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Feliz Cumpleaños, Amor ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:"Segoe UI",Arial,sans-serif;
+    background:#080612;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* =====================================================
+   PORTADA
+===================================================== */
+
+.portada{
+    min-height:100vh;
+    position:relative;
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+
+    background:
+        radial-gradient(circle at 50% 25%,rgba(255,180,210,.15),transparent 30%),
+        linear-gradient(
+            to bottom,
+            #080719 0%,
+            #171238 28%,
+            #47254c 58%,
+            #b8667e 78%,
+            #120b1b 100%
+        );
+}
+
+/* =====================================================
+   ESTRELLAS
+===================================================== */
+
+.estrella{
+    position:absolute;
+    color:#fff;
+    z-index:1;
+    animation:brillo 2.5s infinite alternate;
+    text-shadow:0 0 12px white;
+}
+
+.e1{top:9%;left:9%;font-size:18px}
+.e2{top:15%;left:28%;font-size:12px}
+.e3{top:8%;left:48%;font-size:20px}
+.e4{top:19%;left:70%;font-size:14px}
+.e5{top:30%;left:12%;font-size:15px}
+.e6{top:26%;left:87%;font-size:18px}
+.e7{top:35%;left:42%;font-size:12px}
+.e8{top:40%;left:76%;font-size:17px}
+.e9{top:13%;left:58%;font-size:11px}
+.e10{top:31%;left:57%;font-size:14px}
+
+@keyframes brillo{
+    from{
+        opacity:.25;
+        transform:scale(.7);
+    }
+    to{
+        opacity:1;
+        transform:scale(1.3);
+    }
+}
+
+/* =====================================================
+   LUNA
+===================================================== */
+
+.luna{
+    position:absolute;
+    top:7%;
+    right:10%;
+    width:100px;
+    height:100px;
+    border-radius:50%;
+
+    background:
+        radial-gradient(circle at 35% 30%,#fff,#fff7d2 60%,#d8cfae);
+
+    box-shadow:
+        0 0 25px #fff8d2,
+        0 0 70px rgba(255,240,190,.35);
+
+    z-index:1;
+}
+
+/* =====================================================
+   TORRE EIFFEL
+===================================================== */
+
+.torre{
+    position:absolute;
+    bottom:-10px;
+    left:50%;
+    transform:translateX(-50%);
+    width:min(600px,72vw);
+    height:72vh;
+    z-index:2;
+    filter:drop-shadow(0 0 12px rgba(255,200,120,.18));
+}
+
+/* Piernas principales */
+
+.pierna{
+    position:absolute;
+    bottom:0;
+    width:18px;
+    height:72%;
+    background:
+        linear-gradient(
+            90deg,
+            #15131a 0%,
+            #5d5960 28%,
+            #242229 55%,
+            #817b80 75%,
+            #17151c 100%
+        );
+    transform-origin:bottom;
+    box-shadow:
+        0 0 5px rgba(255,255,255,.12);
+}
+
+.pierna1{
+    left:25%;
+    transform:rotate(13deg);
+}
+
+.pierna2{
+    right:25%;
+    transform:rotate(-13deg);
+}
+
+.pierna3{
+    left:39%;
+    height:74%;
+    transform:rotate(5deg);
+}
+
+.pierna4{
+    right:39%;
+    height:74%;
+    transform:rotate(-5deg);
+}
+
+/* Centro */
+
+.torre-centro{
+    position:absolute;
+    bottom:0;
+    left:50%;
+    transform:translateX(-50%);
+    width:16px;
+    height:94%;
+
+    background:
+        linear-gradient(
+            90deg,
+            #19171d,
+            #777177,
+            #242129,
+            #777177,
+            #17151b
+        );
+}
+
+/* Punta */
+
+.torre-punta{
+    position:absolute;
+    bottom:91%;
+    left:50%;
+    transform:translateX(-50%);
+    width:6px;
+    height:15%;
+    background:#5e5960;
+}
+
+.torre-antena{
+    position:absolute;
+    bottom:105%;
+    left:50%;
+    transform:translateX(-50%);
+    width:3px;
+    height:7%;
+    background:#888;
+}
+
+/* Plataformas */
+
+.plataforma{
+    position:absolute;
+    left:50%;
+    transform:translateX(-50%);
+    height:9px;
+    border-radius:4px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #8b858a,
+            #27242a,
+            #6d686d
+        );
+
+    box-shadow:0 0 5px rgba(255,255,255,.15);
+}
+
+.p1{
+    width:72%;
+    bottom:29%;
+}
+
+.p2{
+    width:51%;
+    bottom:52%;
+}
+
+.p3{
+    width:28%;
+    bottom:70%;
+}
+
+/* Detalles cruzados */
+
+.cruz{
+    position:absolute;
+    height:3px;
+    background:#504b52;
+    opacity:.8;
+    transform-origin:center;
+}
+
+.c1{
+    width:48%;
+    left:26%;
+    bottom:15%;
+    transform:rotate(25deg);
+}
+
+.c2{
+    width:48%;
+    right:26%;
+    bottom:15%;
+    transform:rotate(-25deg);
+}
+
+.c3{
+    width:40%;
+    left:30%;
+    bottom:24%;
+    transform:rotate(-25deg);
+}
+
+.c4{
+    width:40%;
+    right:30%;
+    bottom:24%;
+    transform:rotate(25deg);
+}
+
+.c5{
+    width:32%;
+    left:34%;
+    bottom:38%;
+    transform:rotate(25deg);
+}
+
+.c6{
+    width:32%;
+    right:34%;
+    bottom:38%;
+    transform:rotate(-25deg);
+}
+
+.c7{
+    width:25%;
+    left:37.5%;
+    bottom:57%;
+    transform:rotate(-25deg);
+}
+
+.c8{
+    width:25%;
+    right:37.5%;
+    bottom:57%;
+    transform:rotate(25deg);
+}
+
+/* Luces Eiffel */
+
+.luz-eiffel{
+    position:absolute;
+    width:7px;
+    height:7px;
+    border-radius:50%;
+    background:#ffd96b;
+    box-shadow:
+        0 0 8px #ffd96b,
+        0 0 18px #ffd96b;
+    animation:luzParpadea 1.8s infinite alternate;
+}
+
+.le1{bottom:30%;left:22%}
+.le2{bottom:30%;right:22%}
+.le3{bottom:52%;left:35%}
+.le4{bottom:52%;right:35%}
+.le5{bottom:70%;left:46%}
+.le6{bottom:70%;right:46%}
+
+@keyframes luzParpadea{
+    from{opacity:.45}
+    to{opacity:1}
+}
+
+/* =====================================================
+   CIUDAD DE PARÍS
+===================================================== */
+
+.ciudad{
+    position:absolute;
+    bottom:0;
+    width:100%;
+    height:23%;
+    z-index:1;
+
+    background:
+        linear-gradient(
+            to top,
+            #08070d 0%,
+            rgba(8,7,13,.85) 60%,
+            transparent
+        );
+}
+
+.edificio{
+    position:absolute;
+    bottom:0;
+    background:#0c0a12;
+    box-shadow:0 -2px 10px rgba(0,0,0,.4);
+}
+
+.ed1{left:2%;width:10%;height:55%}
+.ed2{left:13%;width:7%;height:70%}
+.ed3{left:21%;width:12%;height:45%}
+.ed4{right:2%;width:11%;height:62%}
+.ed5{right:15%;width:8%;height:78%}
+.ed6{right:25%;width:13%;height:48%}
+
+.ventana{
+    position:absolute;
+    width:4px;
+    height:7px;
+    background:#ffd56b;
+    box-shadow:0 0 5px #ffd56b;
+}
+
+/* =====================================================
+   TEXTO
+===================================================== */
+
+.contenido{
+    position:relative;
+    z-index:10;
+    width:min(1000px,92%);
+    padding:55px 15px 0;
+}
+
+.titulo{
+    font-size:clamp(32px,6vw,70px);
+    line-height:1.1;
+    text-shadow:
+        0 0 15px rgba(255,255,255,.4),
+        0 5px 15px rgba(0,0,0,.6);
+
+    animation:aparecer 2s ease;
+}
+
+.nombre{
+    color:#ffb5d3;
+    text-shadow:
+        0 0 15px #ff6fa8,
+        0 0 30px rgba(255,100,160,.5);
+}
+
+.subtitulo{
+    margin-top:18px;
+    font-size:clamp(17px,3vw,27px);
+    line-height:1.5;
+    color:#ffe9f2;
+    text-shadow:0 3px 8px #000;
+}
+
+@keyframes aparecer{
+    from{
+        opacity:0;
+        transform:translateY(-30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* =====================================================
+   GLOBO AEROSTÁTICO
+===================================================== */
+
+.globo{
+    position:absolute;
+    z-index:12;
+
+    width:330px;
+    height:500px;
+
+    left:50%;
+    top:31%;
+
+    transform:translateX(-50%);
+
+    animation:flotar 5s ease-in-out infinite;
+}
+
+/* Cuerpo */
+
+.globo-cuerpo{
+    position:absolute;
+    top:0;
+    left:20px;
+
+    width:290px;
+    height:340px;
+
+    border-radius:
+        52% 52%
+        48% 48%
+        45% 45%;
+
+    background:
+        radial-gradient(
+            ellipse at 32% 22%,
+            #fff 0%,
+            #ffd4e3 7%,
+            #ff91bb 20%,
+            #e83c79 45%,
+            #a60d4c 75%,
+            #57082f 100%
+        );
+
+    border:6px solid #57072e;
+
+    box-shadow:
+        inset 30px 15px 45px rgba(255,255,255,.25),
+        inset -40px -35px 55px rgba(35,0,20,.5),
+        0 25px 45px rgba(0,0,0,.5);
+
+    overflow:hidden;
+}
+
+/* Paneles */
+
+.globo-cuerpo::before{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent 0 13%,
+            rgba(93,0,40,.45) 14% 16%,
+            transparent 17% 29%,
+            rgba(93,0,40,.45) 30% 32%,
+            transparent 33% 47%,
+            rgba(93,0,40,.45) 48% 50%,
+            transparent 51% 65%,
+            rgba(93,0,40,.45) 66% 68%,
+            transparent 69% 82%,
+            rgba(93,0,40,.45) 83% 85%,
+            transparent 86%
+        );
+
+    opacity:.8;
+}
+
+/* Brillo */
+
+.globo-cuerpo::after{
+    content:"";
+    position:absolute;
+
+    left:52px;
+    top:35px;
+
+    width:80px;
+    height:170px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.23);
+
+    filter:blur(12px);
+
+    transform:rotate(-20deg);
+}
+
+/* Nombre */
+
+.nombre-globo{
+    position:absolute;
+    z-index:4;
+
+    top:135px;
+    left:0;
+
+    width:100%;
+
+    color:white;
+    font-size:42px;
+    font-weight:bold;
+    letter-spacing:4px;
+
+    text-shadow:
+        0 3px 5px #56072e,
+        0 0 15px rgba(255,255,255,.5);
+}
+
+/* Cuerdas */
+
+.cuerda{
+    position:absolute;
+    top:300px;
+
+    width:5px;
+    height:110px;
+
+    background:
+        repeating-linear-gradient(
+            45deg,
+            #503222 0 5px,
+            #c08b5d 5px 8px
+        );
+
+    z-index:3;
+}
+
+.cuerda1{
+    left:76px;
+    transform:rotate(7deg);
+}
+
+.cuerda2{
+    right:76px;
+    transform:rotate(-7deg);
+}
+
+/* Canasta */
+
+.canasta{
+    position:absolute;
+
+    left:110px;
+    top:378px;
+
+    width:110px;
+    height:75px;
+
+    border:6px solid #53301e;
+    border-radius:7px 7px 20px 20px;
+
+    background:
+        repeating-linear-gradient(
+            90deg,
+            #80502f 0 8px,
+            #c28a59 8px 13px
+        );
+
+    box-shadow:
+        inset 0 5px 10px rgba(255,255,255,.15),
+        0 10px 20px rgba(0,0,0,.5);
+
+    z-index:4;
+}
+
+.canasta::before{
+    content:"";
+    position:absolute;
+    left:18px;
+    right:18px;
+    top:-17px;
+    height:20px;
+    border:4px solid #5b3723;
+    border-bottom:none;
+    border-radius:50% 50% 0 0;
+}
+
+.canasta::after{
+    content:"❤️";
+    position:absolute;
+    top:18px;
+    left:35px;
+    font-size:27px;
+}
+
+/* Movimiento */
+
+@keyframes flotar{
+    0%,100%{
+        transform:translate(-50%,0);
+    }
+
+    50%{
+        transform:translate(-50%,-25px);
+    }
+}
+
+/* =====================================================
+   SOBRE
+===================================================== */
+
+.sobre-contenedor{
+    position:relative;
+    z-index:25;
+
+    margin-top:20px;
+}
+
+.boton-sobre{
+    border:none;
+    cursor:pointer;
+
+    padding:18px 34px;
+
+    border-radius:50px;
+
+    font-size:18px;
+    font-weight:bold;
+
+    color:white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff4f91,
+            #c51662
+        );
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.4),
+        0 0 20px rgba(255,80,150,.25);
+
+    transition:.3s;
+}
+
+.boton-sobre:hover{
+    transform:scale(1.08);
+}
+
+.boton-sobre:active{
+    transform:scale(.96);
+}
+
+/* =====================================================
+   FUEGOS ARTIFICIALES
+===================================================== */
+
+#fuegos{
+    position:fixed;
+    inset:0;
+
+    width:100%;
+    height:100%;
+
+    pointer-events:none;
+
+    z-index:100;
+}
+
+/* =====================================================
+   SORPRESA
+===================================================== */
+
+.sorpresa{
+    display:none;
+
+    position:relative;
+    z-index:35;
+
+    width:min(800px,90%);
+
+    margin:30px auto 60px;
+
+    padding:35px 25px;
+
+    border-radius:28px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.16),
+            rgba(255,105,160,.13)
+        );
+
+    backdrop-filter:blur(14px);
+
+    border:1px solid rgba(255,255,255,.3);
+
+    box-shadow:
+        0 15px 50px rgba(0,0,0,.35);
+
+    animation:sorpresaAparece 1.5s ease;
+}
+
+.sorpresa h2{
+    font-size:clamp(27px,5vw,45px);
+    color:#ffb7d4;
+    margin-bottom:18px;
+}
+
+.sorpresa p{
+    font-size:clamp(17px,3vw,23px);
+    line-height:1.7;
+}
+
+@keyframes sorpresaAparece{
+    from{
+        opacity:0;
+        transform:translateY(70px) scale(.75);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+}
+
+/* =====================================================
+   FOTOS
+===================================================== */
+
+.fotos-seccion{
+    position:relative;
+    min-height:100vh;
+
+    padding:80px 20px;
+
+    text-align:center;
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(255,100,160,.18),
+            transparent 40%
+        ),
+        linear-gradient(
+            135deg,
+            #16091e,
+            #47132f,
+            #100819
+        );
+}
+
+.fotos-titulo{
+    font-size:clamp(30px,5vw,52px);
+    color:#ffc2d9;
+    margin-bottom:12px;
+}
+
+.fotos-subtitulo{
+    font-size:clamp(16px,2.5vw,20px);
+    color:#f4dce7;
+    margin-bottom:45px;
+}
+
+.galeria{
+    width:min(1100px,100%);
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:22px;
+}
+
+.foto-card{
+    position:relative;
+    aspect-ratio:3/4;
+
+    overflow:hidden;
+
+    border-radius:22px;
+
+    background:#211021;
+
+    border:3px solid rgba(255,255,255,.25);
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,.45);
+
+    transition:.4s;
+}
+
+.foto-card:hover{
+    transform:translateY(-10px) scale(1.02);
+}
+
+.foto-card img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+
+    transition:.5s;
+}
+
+.foto-card:hover img{
+    transform:scale(1.08);
+}
+
+.numero{
+    position:absolute;
+
+    top:12px;
+    left:12px;
+
+    width:36px;
+    height:36px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:rgba(0,0,0,.65);
+
+    font-weight:bold;
+
+    z-index:5;
+}
+
+/* =====================================================
+   PIE
+===================================================== */
+
+.pie{
+    padding:40px 20px;
+
+    text-align:center;
+
+    background:#07050b;
+
+    color:#eabbd0;
+
+    font-size:16px;
+}
+
+/* =====================================================
+   CELULARES
+===================================================== */
+
+@media(max-width:700px){
+
+    .contenido{
+        padding-top:30px;
+    }
+
+    .titulo{
+        font-size:clamp(30px,9vw,48px);
+    }
+
+    .subtitulo{
+        font-size:17px;
+    }
+
+    .luna{
+        width:65px;
+        height:65px;
+        right:7%;
+    }
+
+    .torre{
+        width:90vw;
+        height:48vh;
+    }
+
+    .globo{
+        top:37%;
+        transform:translateX(-50%) scale(.67);
+    }
+
+    @keyframes flotar{
+        0%,100%{
+            transform:translate(-50%,0) scale(.67);
+        }
+
+        50%{
+            transform:translate(-50%,-15px) scale(.67);
+        }
+    }
+
+    .boton-sobre{
+        font-size:16px;
+        padding:15px 25px;
+    }
+
+    .galeria{
+        grid-template-columns:repeat(2,1fr);
+        gap:14px;
+    }
+
+    .fotos-seccion{
+        padding:60px 14px;
+    }
+}
+
+/* =====================================================
+   CELULARES PEQUEÑOS
+===================================================== */
+
+@media(max-width:400px){
+
+    .contenido{
+        padding-top:25px;
+    }
+
+    .globo{
+        top:39%;
+        transform:translateX(-50%) scale(.56);
+    }
+
+    @keyframes flotar{
+        0%,100%{
+            transform:translate(-50%,0) scale(.56);
+        }
+
+        50%{
+            transform:translate(-50%,-12px) scale(.56);
+        }
+    }
+
+    .galeria{
+        grid-template-columns:1fr;
+    }
+
+    .foto-card{
+        aspect-ratio:4/5;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- FUEGOS -->
+<canvas id="fuegos"></canvas>
+
+<section class="portada">
+
+    <!-- Luna -->
+    <div class="luna"></div>
+
+    <!-- Estrellas -->
+    <div class="estrella e1">✨</div>
+    <div class="estrella e2">⭐</div>
+    <div class="estrella e3">✨</div>
+    <div class="estrella e4">⭐</div>
+    <div class="estrella e5">✨</div>
+    <div class="estrella e6">⭐</div>
+    <div class="estrella e7">✨</div>
+    <div class="estrella e8">💖</div>
+    <div class="estrella e9">⭐</div>
+    <div class="estrella e10">✨</div>
+
+
+    <!-- =================================================
+         TORRE EIFFEL
+    ================================================== -->
+
+    <div class="torre">
+
+        <div class="pierna pierna1"></div>
+        <div class="pierna pierna2"></div>
+        <div class="pierna pierna3"></div>
+        <div class="pierna pierna4"></div>
+
+        <div class="torre-centro"></div>
+
+        <div class="torre-punta"></div>
+        <div class="torre-antena"></div>
+
+        <div class="plataforma p1"></div>
+        <div class="plataforma p2"></div>
+        <div class="plataforma p3"></div>
+
+        <div class="cruz c1"></div>
+        <div class="cruz c2"></div>
+        <div class="cruz c3"></div>
+        <div class="cruz c4"></div>
+        <div class="cruz c5"></div>
+        <div class="cruz c6"></div>
+        <div class="cruz c7"></div>
+        <div class="cruz c8"></div>
+
+        <div class="luz-eiffel le1"></div>
+        <div class="luz-eiffel le2"></div>
+        <div class="luz-eiffel le3"></div>
+        <div class="luz-eiffel le4"></div>
+        <div class="luz-eiffel le5"></div>
+        <div class="luz-eiffel le6"></div>
+
+    </div>
+
+
+    <!-- =================================================
+         CIUDAD
+    ================================================== -->
+
+    <div class="ciudad">
+
+        <div class="edificio ed1">
+            <span class="ventana" style="left:20%;top:25%"></span>
+            <span class="ventana" style="left:60%;top:40%"></span>
+        </div>
+
+        <div class="edificio ed2">
+            <span class="ventana" style="left:30%;top:20%"></span>
+            <span class="ventana" style="left:65%;top:45%"></span>
+        </div>
+
+        <div class="edificio ed3">
+            <span class="ventana" style="left:25%;top:30%"></span>
+            <span class="ventana" style="left:70%;top:55%"></span>
+        </div>
+
+        <div class="edificio ed4"></div>
+        <div class="edificio ed5"></div>
+        <div class="edificio ed6"></div>
+
+    </div>
+
+
+    <!-- =================================================
+         TEXTO
+    ================================================== -->
+
+    <div class="contenido">
+
+        <h1 class="titulo">
+            🎂 ¡Feliz Cumpleaños,
+            <span class="nombre">Amor</span>! 🎂
+        </h1>
+
+        <p class="subtitulo">
+            Mi amor, hoy quiero celebrar tu vida ❤️<br>
+            Deseo que todos tus sueños se hagan realidad.
+        </p>
+
+    </div>
+
+
+    <!-- =================================================
+         GLOBO
+    ================================================== -->
+
+    <div class="globo" id="globo">
+
+        <div class="globo-cuerpo">
+
+            <div class="nombre-globo">
+                AMOR ❤️
+            </div>
+
+        </div>
+
+        <div class="cuerda cuerda1"></div>
+        <div class="cuerda cuerda2"></div>
+
+        <div class="canasta"></div>
+
+    </div>
+
+
+    <!-- =================================================
+         BOTÓN
+    ================================================== -->
+
+    <div class="sobre-contenedor">
+
+        <button
+            class="boton-sobre"
+            onclick="abrirSorpresa()">
+
+            💌 Abrir el sobre
+
+        </button>
+
+    </div>
+
+
+    <!-- =================================================
+         MENSAJE
+    ================================================== -->
+
+    <div
+        class="sorpresa"
+        id="sorpresa">
+
+        <h2>
+            💕 Para ti, mi Amor 💕
+        </h2>
+
+        <p>
+            Hoy quiero recordarte lo especial que eres para mí.
+            Espero que este nuevo año de tu vida esté lleno de
+            momentos hermosos, sonrisas, aventuras y sueños cumplidos.
+            <br><br>
+
+            Gracias por existir y por hacer mi vida mucho más bonita.
+            Espero poder seguir compartiendo muchos momentos
+            especiales contigo.
+            <br><br>
+
+            🎂✨ Feliz cumpleaños, mi amor. ✨🎂
+            <br><br>
+
+            ❤️ Te quiero muchísimo ❤️
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FOTOS
+===================================================== -->
+
+<section class="fotos-seccion">
+
+    <h2 class="fotos-titulo">
+        📸 Nuestros momentos ❤️
+    </h2>
+
+    <p class="fotos-subtitulo">
+        Cuatro recuerdos especiales para una persona especial.
+    </p>
+
+
+    <div class="galeria">
+
+        <div class="foto-card">
+            <span class="numero">1</span>
+            <img
+                src="fotos/foto1.jpg"
+                alt="Nuestro recuerdo 1">
+        </div>
+
+        <div class="foto-card">
+            <span class="numero">2</span>
+            <img
+                src="fotos/foto2.jpg"
+                alt="Nuestro recuerdo 2">
+        </div>
+
+        <div class="foto-card">
+            <span class="numero">3</span>
+            <img
+                src="fotos/foto3.jpg"
+                alt="Nuestro recuerdo 3">
+        </div>
+
+        <div class="foto-card">
+            <span class="numero">4</span>
+            <img
+                src="fotos/foto4.jpg"
+                alt="Nuestro recuerdo 4">
+        </div>
+
+    </div>
+
+</section>
+
+
+<footer class="pie">
+
+    Hecho especialmente para mi Amor ❤️🎈
+
+</footer>
+
+
+<script>
+
+/* =====================================================
+   FUEGOS ARTIFICIALES
+===================================================== */
+
+const canvas = document.getElementById("fuegos");
+const ctx = canvas.getContext("2d");
+
+let fuegos = [];
+let particulas = [];
+let animando = false;
+
+function ajustarCanvas(){
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+}
+
+ajustarCanvas();
+
+window.addEventListener("resize", ajustarCanvas);
+
+
+/* Crear explosión */
+
+function crearFuego(x,y){
+
+    const colores = [
+        "#ff4f91",
+        "#ffd166",
+        "#ffffff",
+        "#7df9ff",
+        "#c77dff",
+        "#ff7b00"
+    ];
+
+    const color =
+        colores[
+            Math.floor(
+                Math.random()*colores.length
+            )
+        ];
+
+    for(let i=0;i<70;i++){
+
+        const angulo =
+            Math.random()*Math.PI*2;
+
+        const velocidad =
+            Math.random()*7+2;
+
+        particulas.push({
+
+            x:x,
+            y:y,
+
+            vx:
+                Math.cos(angulo)*velocidad,
+
+            vy:
+                Math.sin(angulo)*velocidad,
+
+            vida:1,
+
+            color:color,
+
+            tamaño:
+                Math.random()*2.5+1
+
+        });
+
+    }
+
+}
+
+
+/* Animación */
+
+function animarFuegos(){
+
+    if(!animando) return;
+
+    ctx.clearRect(
+        0,
+        0,
+        canvas.width,
+        canvas.height
+    );
+
+    particulas.forEach((p,index)=>{
+
+        p.x += p.vx;
+        p.y += p.vy;
+
+        p.vy += .035;
+
+        p.vida -= .012;
+
+        ctx.globalAlpha =
+            Math.max(p.vida,0);
+
+        ctx.beginPath();
+
+        ctx.arc(
+            p.x,
+            p.y,
+            p.tamaño,
+            0,
+            Math.PI*2
+        );
+
+        ctx.fillStyle = p.color;
+
+        ctx.shadowBlur = 15;
+        ctx.shadowColor = p.color;
+
+        ctx.fill();
+
+        if(p.vida<=0){
+
+            particulas.splice(index,1);
+
+        }
+
+    });
+
+    ctx.globalAlpha=1;
+
+    if(particulas.length>0){
+
+        requestAnimationFrame(animarFuegos);
+
+    }else{
+
+        animando=false;
+
+        ctx.clearRect(
+            0,
+            0,
+            canvas.width,
+            canvas.height
+        );
+
+    }
+
+}
+
+
+/* Gran espectáculo */
+
+function lanzarFuegos(){
+
+    animando=true;
+
+    particulas=[];
+
+    crearFuego(
+        canvas.width*.2,
+        canvas.height*.28
+    );
+
+    crearFuego(
+        canvas.width*.8,
+        canvas.height*.25
+    );
+
+    crearFuego(
+        canvas.width*.5,
+        canvas.height*.18
+    );
+
+    crearFuego(
+        canvas.width*.35,
+        canvas.height*.42
+    );
+
+    crearFuego(
+        canvas.width*.68,
+        canvas.height*.40
+    );
+
+    animarFuegos();
+
+}
+
+
+/* =====================================================
+   ABRIR SORPRESA
+===================================================== */
+
+function abrirSorpresa(){
+
+    const globo =
+        document.getElementById("globo");
+
+    const sorpresa =
+        document.getElementById("sorpresa");
+
+    const boton =
+        document.querySelector(".boton-sobre");
+
+
+    /* Evitar múltiples clics */
+
+    boton.disabled=true;
+
+
+    /* El globo sube */
+
+    globo.classList.add("abierto");
+
+
+    /* Fuegos artificiales */
+
+    setTimeout(function(){
+
+        lanzarFuegos();
+
+    },500);
+
+
+    setTimeout(function(){
+
+        lanzarFuegos();
+
+    },1800);
+
+
+    setTimeout(function(){
+
+        lanzarFuegos();
+
+    },3200);
+
+
+    /* Mostrar mensaje */
+
+    setTimeout(function(){
+
+        sorpresa.style.display="block";
+
+        sorpresa.scrollIntoView({
+            behavior:"smooth",
+            block:"center"
+        });
+
+    },1800);
+
+}
+
+</script>
+
+</body>
+</html>
